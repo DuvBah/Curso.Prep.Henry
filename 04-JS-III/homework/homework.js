@@ -26,6 +26,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  let arreglo = []
+  for(let i = 0 ; i < array.length; i ++){
+    arreglo[i]= array[i] + 1;
+  }
+  return arreglo;
 }
 
 
@@ -33,6 +38,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push (elemento);
+  return array;
 }
 
 
@@ -41,6 +48,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  let arreglo = array.unshift(elemento);
+  return array;
 }
 
 
@@ -50,6 +59,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  return palabras.join(" ");
 }
 
 
@@ -57,6 +67,12 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  for (let i =0 ; i< array.length; i++){
+    if (array[i] === elemento){
+      return true;
+    } 
+  }
+  return false;
 }
 
 
@@ -64,6 +80,11 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  let total = 0;
+  for(let i of numeros) {
+    total +=i;
+  }
+  return total;
 }
 
 
@@ -71,13 +92,32 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  let total = 0;
+  let cont = 0;
+  let pro = 0;
+  for(let i of resultadosTest) {
+    cont = cont+1;
+    total +=i;
+    
+  }
+  pro = total / cont;
+  return pro;
 }
+
 
 
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  let numeroG = numeros[0];
+  for (const i in numeros){
+    if (numeros [i] > numeroG){
+      numeroG = numeros [i];
+    }
+  }
+  return numeroG;
+
 }
 
 
@@ -85,6 +125,7 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+
 }
 
 
@@ -100,6 +141,12 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
+  if (numeroDeDia === 1 || numeroDeDia === 7){
+    return "Es fin de semana"
+  }else{
+    return "Es dia Laboral"
+  }
+ 
   
 } 
 
